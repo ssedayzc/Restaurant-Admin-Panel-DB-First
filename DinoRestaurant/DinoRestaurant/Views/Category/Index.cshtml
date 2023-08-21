@@ -1,0 +1,92 @@
+﻿@using DinoRestaurant.Models.Entity
+@model  List<Categories>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+
+<style>
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .table th,
+        .table td {
+            padding: 8px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .table th {
+            background-color: #b5b5b5;
+            font-weight: bold;
+        }
+
+        .table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .table tr:hover {
+            background-color: #e2e2e2;
+        }
+
+    .btn {
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 3px;
+        font-weight: normal;
+    }
+
+    .btn-warning {
+        background-color: #ffc107;
+        color: #fff;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        color: #fff;
+    }
+</style>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Kategori Görseli</th>
+        <th>Kategori Adı</th>
+        <th>Kategori Açıklama</th>
+        <th>Kategori Durumu</th>
+        <th>Menüler</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CategoryId</td>
+            <td>
+                @if (!string.IsNullOrEmpty(item.Image))
+                {
+                    <img style="height:100px;width:100px" src="~/Images/Category/@item.Image" />
+                }
+                
+            </td>
+            <td>@item.CategoryName</td>
+            <td>@item.Description</td>
+            <td>@item.IsActive</td>
+            <td><a href="/Items/" class="btn btn-primary">Çeşitler</a></td>
+            <td><a href="#" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/Category/DeleteCategory/@item.CategoryId" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+
+</table>
+<br />
+<a href="/Category/AddCategory/" class="btn btn-info">Yeni Kategori</a>
+

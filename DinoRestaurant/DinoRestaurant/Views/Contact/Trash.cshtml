@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Trash";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Trash</h2>
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <h3 class="card-title">Çöp Kutusu</h3>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Alıcı</th>
+                                    <th>Konu</th>
+                                    <th>Mesaj</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.UserMail</td>
+                                        <td>@item.Subject</td>
+                                        <td>@Html.Raw(System.Text.RegularExpressions.Regex.Replace(item.Message, "<.*?>", ""))</td>
+                                        <td>
+                                            <a href="/Contact/ConfirmDeleteMsg/@item.ContactId" class="btn btn-danger">
+                                                <i class="far fa-trash-alt"></i> Kalıcı Sil
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dinoMariaDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Abouts">
+    <Key>
+      <PropertyRef Name="AboutId" />
+    </Key>
+    <Property Name="AboutId" Type="int" Nullable="false" />
+    <Property Name="AboutDetail1" Type="nvarchar" MaxLength="1000" />
+    <Property Name="AboutDetail2" Type="nvarchar" MaxLength="1000" />
+    <Property Name="AboutImage1" Type="nvarchar" MaxLength="100" />
+    <Property Name="AboutImage2" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Admins">
+    <Key>
+      <PropertyRef Name="AdminId" />
+    </Key>
+    <Property Name="AdminId" Type="int" Nullable="false" />
+    <Property Name="AdminUserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="AdminPassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="AdminRole" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="150" />
+    <Property Name="Image" Type="nvarchar" MaxLength="150" />
+    <Property Name="Description" Type="nvarchar" MaxLength="600" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="600" />
+    <Property Name="CreatedOn" Type="nvarchar" MaxLength="600" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="600" />
+    <Property Name="ModifiedOn" Type="nvarchar" MaxLength="600" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="600" />
+    <Property Name="DeletedOn" Type="nvarchar" MaxLength="600" />
+  </EntityType>
+  <EntityType Name="Contacts">
+    <Key>
+      <PropertyRef Name="ContactId" />
+    </Key>
+    <Property Name="ContactId" Type="int" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserMail" Type="nvarchar" MaxLength="100" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="50" />
+    <Property Name="Message" Type="nvarchar" MaxLength="600" />
+  </EntityType>
+  <EntityType Name="ImageFiles">
+    <Key>
+      <PropertyRef Name="ImageId" />
+    </Key>
+    <Property Name="ImageId" Type="int" Nullable="false" />
+    <Property Name="ImageName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Items">
+    <Key>
+      <PropertyRef Name="ItemId" />
+    </Key>
+    <Property Name="ItemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="500" />
+    <Property Name="Image" Type="nvarchar" MaxLength="250" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="600" />
+    <Property Name="CreatedOn" Type="nvarchar" MaxLength="600" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="600" />
+    <Property Name="ModifiedOn" Type="nvarchar" MaxLength="600" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="600" />
+    <Property Name="DeletedOn" Type="nvarchar" MaxLength="600" />
+    <Property Name="CategoryId" Type="int" />
+  </EntityType>
+  <Association Name="FK_dbo_Items_dbo_Categories_CategoryId">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="Items" Type="Self.Items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="Items">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dinoMariaDBModelStoreContainer">
+    <EntitySet Name="Abouts" EntityType="Self.Abouts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contacts" EntityType="Self.Contacts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ImageFiles" EntityType="Self.ImageFiles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Items" EntityType="Self.Items" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_Items_dbo_Categories_CategoryId" Association="Self.FK_dbo_Items_dbo_Categories_CategoryId">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Items" EntitySet="Items" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

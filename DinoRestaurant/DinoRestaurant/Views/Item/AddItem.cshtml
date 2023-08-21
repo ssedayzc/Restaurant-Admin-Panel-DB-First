@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "AddItem";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <strong> Yeni Menü Ekleme Sayfası </strong>
+            </div>
+            <div class="card-body card-block">
+                <form asp-controller="Item" asp-action="AddItem" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    @*<label><strong>ID</strong></label>
+        <input type="text" class="form-control" name="CategoryId" />*@
+                    <br />
+                    <label><strong>Menü Görseli</strong></label>
+                    <input type="file" class="form-control" name="Image" />
+                    <br />
+                    <label><strong>Menü Adı</strong></label>
+                    <input type="text" class="form-control" name="ItemName" />
+                    <br />
+                    <label><strong>Kategori Adı</strong></label>
+                    <select class="form-control" name="CategoryId">
+                        @foreach (var category in ViewBag.Categories)
+                        {
+                            <option value="@category.CategoryId">@category.CategoryName</option>
+                        }
+                    </select>
+                    <br />
+                    <label><strong>Menü Açıklaması</strong></label>
+                    <input type="text" class="form-control" name="Description" />
+                    <br />
+                    <label><strong>Menü Fiyatı</strong></label>
+                    <input type="number" class="form-control" name="Price" />
+                    <br />
+                    <label><strong>Menü Durumu</strong></label><br />
+                    <div class="form-check-inline">
+                        <input type="checkbox" class="form-check-input" name="IsActive" id="isActiveCheckbox" value="true" />
+                        <label class="form-check-label" for="isActiveCheckbox">Aktif</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="checkbox" class="form-check-input" name="IsActive" value="false" />
+                        <label class="form-check-label">Pasif</label>
+                    </div>
+                    <br /><br />
+                    <button class="btn btn-primary btn-sm" type="submit">
+                        <i class="fa fa-dot-circle-o"></i>Menü Ekle
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

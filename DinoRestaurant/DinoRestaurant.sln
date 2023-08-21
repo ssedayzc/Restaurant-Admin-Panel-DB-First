@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33801.447
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DinoRestaurant", "DinoRestaurant\DinoRestaurant.csproj", "{8F48424B-A3C3-4F99-8AEC-064916F8C081}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F48424B-A3C3-4F99-8AEC-064916F8C081}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F48424B-A3C3-4F99-8AEC-064916F8C081}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F48424B-A3C3-4F99-8AEC-064916F8C081}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F48424B-A3C3-4F99-8AEC-064916F8C081}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {42901C6E-1F1D-4B5A-A513-C61E82B57F05}
+	EndGlobalSection
+EndGlobal

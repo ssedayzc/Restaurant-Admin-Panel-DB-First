@@ -1,0 +1,42 @@
+﻿@using DinoRestaurant.Models.Entity
+@model List<Contacts>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+
+<body class="hold-transition sidebar-mini">
+
+    <!-- Content Wrapper. Contains page content -->
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>İletişim Sayfası</h1>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <!-- /.col -->
+            @Html.Action("MessageListMenu", "Contact")
+            <div class="col-md-9">
+                
+                <img src="~/Images/contact-index-page.jpg"  alt="İletişim Ana Sayfası Görseli" style="width: 100%; max-width: 800px; margin: 0 auto; display: block;" />
+
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+
+</body>
+</html>
+
