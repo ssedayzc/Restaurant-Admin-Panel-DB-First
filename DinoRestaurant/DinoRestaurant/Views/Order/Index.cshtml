@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<p>
+    @Html.TextBox("p", null, new { @class = "search-textbox", placeholder = "Siparişlerde Ara" })
+    <input type="submit" value="Ara" />
+</p>
+    
+<style>
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .table th,
+        .table td {
+            padding: 8px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .table th {
+            background-color: #b5b5b5;
+            font-weight: bold;
+        }
+
+        .table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .table tr:hover {
+            background-color: #e2e2e2;
+        }
+
+    .btn {
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 3px;
+        font-weight: normal;
+    }
+
+    .btn-warning {
+        background-color: #ffc107;
+        color: #fff;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        color: #fff;
+    }
+</style>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Sipariş No</th>
+            <th>Sipariş Adı</th>
+            <th>Adresi</th>
+            <th>Sipariş Durumu</th>
+            <th>Ödeme Türü</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+
+    <tr>
+        <td>1</td>
+        <td>33273</td>
+        <td>Kızarmış Tavuk</td>
+        <td>Test</td>
+        <td class="project-state">
+            
+                <span class="badge badge-warning">Teslim Edildi</span>
+            
+        </td>
+
+        <td>
+            <span class="badge badge-info ">Online Kredi/Banka</span>
+        </td>
+        <td><a href="#" class="btn btn-sm btn-danger">Sil</a></td>
+    </tr>
+</table>

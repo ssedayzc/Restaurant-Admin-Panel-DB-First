@@ -133,6 +133,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2187,7 +2188,10 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\contact-index-page.jpg" />
     <Content Include="Images\dinosoft_logo.png" />
+    <Content Include="Images\karisik-pide.jpg" />
+    <Content Include="Images\kofte.jpg" />
     <Content Include="Images\loginpage.png" />
+    <Content Include="Images\pizza.jpg" />
     <Content Include="Models\Entity\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -2679,6 +2683,8 @@
     <Content Include="Views\Item\UpdateItem.cshtml" />
     <Content Include="Views\Item\ListByCategory.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Order\OrderReview.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

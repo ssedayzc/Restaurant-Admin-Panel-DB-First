@@ -1,0 +1,258 @@
+﻿
+@{
+    ViewBag.Title = "OrderReview";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Restoran Yemekleri</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome kütüphanesini ekleyin -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        body {
+            background-image: url("../Image/restaurant-background.jpg");
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            background-color: rgba(255, 255, 255, 0); /* Şeffaf arka plan */
+        }
+
+        .sidebar {
+            /* Maksimum genişlik ve yükseklik ayarları */
+            max-width: 300px; /* İstediğiniz maksimum genişlik değeri */
+            max-height: 100vh; /* İstediğiniz maksimum yükseklik değeri */
+            /* Scroll bar'ı kaldırmak için */
+            overflow: hidden;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .meal-card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        h3 {
+            color: red;
+        }
+
+        .comment-container {
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        .comment {
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+
+            .comment p {
+                margin: 5px 0;
+                color: black;
+            }
+
+            .comment hr {
+                margin-top: 10px;
+                margin-bottom: 5px;
+            }
+
+            .comment p {
+                margin: 5px 0;
+                color: black;
+            }
+
+        .admin-response, .admin-answer {
+            color: blue;
+        }
+
+            .admin-answer textarea {
+                width: 100%;
+                margin-top: 5px;
+            }
+
+        .meal-image {
+            width: 100%;
+            height: 200px; /* Görsel yüksekliğini istediğiniz değere ayarlayın */
+            overflow: hidden; /* Görsel boyutunu kırpmak için */
+        }
+
+            .meal-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* Görseli boyutuna sığacak şekilde kırp */
+            }
+
+        /* İkonlar için stiller */
+        .rating-icon, .review-icon {
+            margin-right: 5px;
+        }
+
+            .rating-icon i, .review-icon i {
+                vertical-align: middle;
+            }
+
+        .page-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h2>Restoran Yemekleri</h2>
+
+    <div class="page-content">
+        <div class="grid-container">
+            <!-- Meal card for Köfte -->
+            <div class="meal-card">
+                <div class="meal-image">
+                    <img src="~/Images/kofte.jpg" alt="Köfte">
+                </div>
+                <h3>Köfte</h3>
+                <p>
+                    <!-- Değerlendirme puanı ve yorum sayısı ikonları -->
+                    <span class="rating-icon"><i class="fas fa-star"></i></span> Değerlendirme Puanı: 4.5<br />
+                    <span class="review-icon"><i class="fas fa-comments"></i></span> Yorum Sayısı: 10
+                </p>
+                <h4>Yorumlar</h4>
+                <div class="comment-container">
+                    <div class="comment">
+                        <p>Lezzetliydi!</p>
+                        <p>Puan: 5</p>
+                    </div>
+                    <div class="comment">
+                        <p>İdare eder.</p>
+                        <p>Puan: 3</p>
+                    </div>
+                    <!-- Adminin cevap verdiği yorum -->
+                    <div class="comment">
+                        <p>Teşekkür ederiz!</p>
+                        <p>Puan: 5</p>
+                        <p class="admin-response">Admin: Köfteye yorumunuz için teşekkür ederiz!</p>
+                    </div>
+                    <!-- Daha fazla yorum ekleyin -->
+                    <div class="comment">
+                        <p>Çok lezzetli.</p>
+                        <p>Puan: 5</p>
+                    </div>
+                    <div class="comment">
+                        <p>Harika bir yemek!</p>
+                        <p>Puan: 4</p>
+                    </div>
+                    <div class="comment">
+                        <p>Çok lezzetli.</p>
+                        <p>Puan: 5</p>
+                        <p class="admin-answer">
+                            <span color="blue">Admin Yanıtı:</span>
+                            <textarea rows="3" placeholder="Yanıtınızı buraya yazın..."></textarea>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="meal-card">
+                <div class="meal-image">
+                    <img src="~/Images/karisik-pide.jpg" alt="Karışık Pide">
+                </div>
+                <h3>Karışık Pide</h3>
+                <p>
+                    <!-- Değerlendirme puanı ve yorum sayısı ikonları -->
+                    <span class="rating-icon"><i class="fas fa-star"></i></span> Değerlendirme Puanı: 4.3<br />
+                    <span class="review-icon"><i class="fas fa-comments"></i></span> Yorum Sayısı: 7
+                </p>
+                <h4>Yorumlar</h4>
+                <div class="comment-container">
+                    <div class="comment">
+                        <p>Lezzetliydi!</p>
+                        <p>Puan: 6</p>
+                    </div>
+                    <div class="comment">
+                        <p>İdare eder.</p>
+                        <p>Puan: 3</p>
+                    </div>
+                    <!-- Adminin cevap verdiği yorum -->
+                    <div class="comment">
+                        <p>Teşekkür ederiz!</p>
+                        <p>Puan: 5</p>
+                        <p class="admin-response">Admin: Pideye yorumunuz için teşekkür ederiz!</p>
+                    </div>
+                    <!-- Daha fazla yorum ekleyin -->
+                    <div class="comment">
+                        <p>Çok lezzetli.</p>
+                        <p>Puan: 5</p>
+                    </div>
+                    <div class="comment">
+                        <p>Harika bir yemek!</p>
+                        <p>Puan: 4</p>
+                    </div>
+                    <div class="comment">
+                        <p>Çok lezzetli.</p>
+                        <p>Puan: 5</p>
+                        <p class="admin-answer">
+                            <span color="blue">Admin Yanıtı:</span>
+                            <textarea rows="3" placeholder="Yanıtınızı buraya yazın..."></textarea>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Meal card for Pizza -->
+            <div class="meal-card">
+                <div class="meal-image">
+                    <img src="~/Images/pizza.jpg" alt="Pizza">
+                </div>
+                <h3>Pizza</h3>
+                <p>
+                    <!-- Değerlendirme puanı ve yorum sayısı ikonları -->
+                    <span class="rating-icon"><i class="fas fa-star"></i></span> Değerlendirme Puanı: 4.2<br />
+                    <span class="review-icon"><i class="fas fa-comments"></i></span> Yorum Sayısı: 8
+                </p>
+                <h4>Yorumlar</h4>
+                <div class="comment-container">
+                    <div class="comment">
+                        <p>Harika bir pizza!</p>
+                        <p>Puan: 4</p>
+                    </div>
+                    <div class="comment">
+                        <p>Malzemeler azdı.</p>
+                        <p>Puan: 2</p>
+                    </div>
+                    <!-- Adminin cevap verdiği yorum -->
+                    <div class="comment">
+                        <p>Teşekkür ederiz!</p>
+                        <p>Puan: 4</p>
+                        <p class="admin-response">Admin: Pizza için yorumunuz için teşekkür ederiz!</p>
+                    </div>
+                    <!-- Daha fazla yorum ekleyin -->
+                    <div class="comment">
+                        <p>Ortalama bir pizza.</p>
+                        <p>Puan: 3</p>
+                    </div>
+                    <div class="comment">
+                        <p>Çok yağlı.</p>
+                        <p>Puan: 2</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Font Awesome kütüphanesini ekleyin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</body>
+</html>
