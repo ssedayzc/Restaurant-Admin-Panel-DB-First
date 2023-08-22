@@ -5,7 +5,13 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />
-
+@using (Html.BeginForm("Index", "Category", FormMethod.Get))
+    {
+<p>
+    @Html.TextBox("p", null, new { @class = "search-textbox", placeholder = "Kategorilerde Ara" })
+    <input type="submit" value="Ara" />
+</p>
+    }
 <style>
     .table {
         width: 100%;
@@ -55,38 +61,59 @@
     }
 </style>
 
-<table class="table table-bordered">
-    <tr>
-        <th>#</th>
-        <th>Kategori Görseli</th>
-        <th>Kategori Adı</th>
-        <th>Kategori Açıklama</th>
-        <th>Kategori Durumu</th>
-        <th>Menüler</th>
-        <th>Güncelle</th>
-        <th>Sil</th>
-    </tr>
+<table  class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Kategori Görseli</th>
+            <th>Kategori Adı</th>
+            <th>Kategori Açıklama</th>
+            <th>Kategori Durumu</th>
+            <th>Menüler</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+
     @foreach (var item in Model)
     {
-        <tr>
-            <td>@item.CategoryId</td>
-            <td>
-                @if (!string.IsNullOrEmpty(item.Image))
-                {
-                    <img style="height:100px;width:100px" src="~/Images/Category/@item.Image" />
-                }
-                
-            </td>
-            <td>@item.CategoryName</td>
-            <td>@item.Description</td>
-            <td>@item.IsActive</td>
-            <td><a href="/Items/" class="btn btn-primary">Çeşitler</a></td>
-            <td><a href="#" class="btn btn-warning">Güncelle</a></td>
-            <td><a href="/Category/DeleteCategory/@item.CategoryId" class="btn btn-danger">Sil</a></td>
-        </tr>
+<tr>
+    <td>@item.CategoryId</td>
+    <td>
+        @if (!string.IsNullOrEmpty(item.Image))
+        {
+            <img style="height:100px;width:100px" src="~/Images/Category/@item.Image" />
+        }
+
+    </td>
+    <td>@item.CategoryName</td>
+    <td>@item.Description</td>
+    <td class="project-state">
+        @if (@item.IsActive)
+        {
+            <span>Aktif</span>
+        }
+        else
+        {
+            <span class="badge badge-danger">Pasif</span>
+        }
+    </td>
+    
+    <td><a href="/Item/ListByCategory?id=@item.CategoryId" class="btn btn-sm btn-primary">Çeşitler</a></td>
+    <td><a href="/Category/UpdateCategory/@item.CategoryId" class="btn btn-sm btn-warning">Güncelle</a></td>
+    <td><a href="/Category/DeleteCategory/@item.CategoryId" class="btn btn-sm btn-danger">Sil</a></td>
+</tr>
     }
 
 </table>
 <br />
 <a href="/Category/AddCategory/" class="btn btn-info">Yeni Kategori</a>
 
+@*<script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="~/Content/DataTables/css/dataTables.bootstrap4.css" rel="stylesheet" />
+
+
+<script>
+    $('#tbl1').DataTable();
+</script>*@

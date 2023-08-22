@@ -1,7 +1,7 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,11 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="~/Image/dino.png">
+    <link rel="icon" type="image/png" href="~/Images/dinosoft_logo.png">
     <title>Dinosoft | Online Sipariş</title>
 
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- IonIcons -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
@@ -21,41 +21,27 @@
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<!--
-BODY TAG OPTIONS:
-=================
-Apply one or more of the following classes to to the body tag
-to get the desired effect
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <!-- Navbar -->
-        <!-- /.navbar -->
-        <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4" style="min-height: 100vh;">
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
-                <img src="~/Image/dinosoft.png" alt="AdminLTE Logo" class="brand-image  elevation-2"
-                     style="opacity: .8; margin-left: 15px;">
-
+                <img src="~/Images/dinosoft_logo.png" alt="Dinosoft Logo" class="brand-image" style="width: 160px; margin-left: 35px; filter: drop-shadow(0 0 0 transparent); opacity: 1;">
+                <span class="brand-text font-weight-light" style="margin-left: 15px;"></span>
             </a>
-
 
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
-                <div class="user-panel center mt-4 pb-1 mb-4">
+                @*<div class="user-panel center mt-4 pb-1 mb-4">
                     <div class="image">
                         <img src="" class="img-circle elevation-2" alt="">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">Online Sipariş</a>
                     </div>
-                </div>
+                </div>*@
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
@@ -71,13 +57,13 @@ to get the desired effect
                             </a>
                         </li>
                         @*<li class="nav-item has-treeview ">
-                            <a href="/About/Index/" class="nav-link ">
-                                <i class="fas fa-tree nav-icon"></i>
-                                <p>
-                                    Hakkımızda
-                                </p>
-                            </a>
-                        </li>*@
+                                <a href="/About/Index/" class="nav-link ">
+                                    <i class="fas fa-tree nav-icon"></i>
+                                    <p>
+                                        Hakkımızda
+                                    </p>
+                                </a>
+                            </li>*@
                         <li class="nav-item has-treeview ">
                             <a href="/Category/Index/" class="nav-link ">
                                 <i class="fas fa-folder nav-icon"></i>
@@ -102,7 +88,7 @@ to get the desired effect
                                 </p>
                             </a>
                         </li>
-                       
+
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="fas fa-shopping-cart nav-icon"></i>
@@ -110,7 +96,7 @@ to get the desired effect
                                     Siparişler
                                 </p>
                             </a>
-                        </li>                        
+                        </li>
 
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
@@ -182,29 +168,29 @@ to get the desired effect
                         </li>
 
                         @*<li class="nav-item">
-                            <a href="pages/calendar.html" class="nav-link">
-                                <i class="nav-icon fas fa-calendar-alt"></i>
-                                <p>
-                                    Yetkilendirme
-                                </p>
-                            </a>
-                        </li>*@
+                                <a href="pages/calendar.html" class="nav-link">
+                                    <i class="nav-icon fas fa-calendar-alt"></i>
+                                    <p>
+                                        Yetkilendirme
+                                    </p>
+                                </a>
+                            </li>*@
                         @*<li class="nav-item has-treeview">
-                            <a href="/Gallery/Index/" class="nav-link">
-                                <i class="nav-icon fas fa-envelope"></i>
-                                <p>
-                                    Galeri
-                                </p>
-                            </a>
-                        </li>*@
+                                <a href="/Gallery/Index/" class="nav-link">
+                                    <i class="nav-icon fas fa-envelope"></i>
+                                    <p>
+                                        Galeri
+                                    </p>
+                                </a>
+                            </li>*@
                         @*<li class="nav-item has-treeview">
-                            <a href="/ErrorPage/Page404/" class="nav-link">
-                                <i class="nav-icon fas fa-envelope"></i>
-                                <p>
-                                    Hata Sayfaları
-                                </p>
-                            </a>
-                        </li>*@
+                                <a href="/ErrorPage/Page404/" class="nav-link">
+                                    <i class="nav-icon fas fa-envelope"></i>
+                                    <p>
+                                        Hata Sayfaları
+                                    </p>
+                                </a>
+                            </li>*@
 
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
@@ -243,7 +229,7 @@ to get the desired effect
     <!-- ./wrapper -->
     <!-- REQUIRED SCRIPTS -->
     <!-- jQuery -->
-    @*<script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>*@
+    <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE -->

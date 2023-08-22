@@ -1,0 +1,50 @@
+﻿@model DinoRestaurant.Models.Entity.Items
+@{
+    ViewBag.Title = "UpdateItem";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Kategori Güncelleme Sayfası</h2>
+
+@using (Html.BeginForm("UpdateItem", "Item", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<div class="form-group">
+    @Html.Label("Menü Adı")
+    @Html.TextBoxFor(x => x.ItemName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Kategori Adı")
+    <select class="form-control" name="CategoryId">
+        @foreach (var category in ViewBag.Categories)
+        {
+            <option value="@category.CategoryId">@category.CategoryName</option>
+        }
+    </select>
+    <br /> 
+
+    @Html.Label("Menü Görseli")
+    <input type="file" class="form-control" name="Image" />
+    <br />
+
+    @Html.Label("Menü Açıklaması")
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+    <br /> 
+    @Html.Label("Menü Fiyatı")
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <br /> 
+
+    @Html.LabelFor(model => model.IsActive, new { @class = "control-label" })<br />
+    <div class="form-check-inline">
+        <input type="checkbox" class="form-check-input" name="IsActive" id="isActiveCheckbox" value="true" @(Model.IsActive ? "checked" : "") />
+        <label class="form-check-label" for="isActiveCheckbox">Aktif</label>
+    </div>
+    <div class="form-check-inline">
+        <input type="checkbox" class="form-check-input" name="IsActive" value="false" @(Model.IsActive ? "" : "checked") />
+        <label class="form-check-label">Pasif</label>
+    </div>
+    <br /><br />
+    <button class="btn btn-success" type="submit" value="@Model.ItemId" name="ItemId">
+        Güncelle
+    </button>
+</div>
+}
+

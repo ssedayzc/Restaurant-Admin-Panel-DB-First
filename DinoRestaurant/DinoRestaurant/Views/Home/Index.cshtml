@@ -4,38 +4,29 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Anasayfa</h2>
+<br />
 <!DOCTYPE html>
 <html lang="en">
 
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
     <div class="wrapper">
         
-       
-
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-         
-      
-            <!-- Main content -->
-            <section class="content">
-                <div class="container-fluid">
-                    <!-- Info boxes -->
+                   
                     <div class="row">
                         <div class="col-12 col-sm-6 col-md-3">
                             <div class="info-box">
                                 <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
 
-                                @*<div class="info-box-content">
-                                    <span class="info-box-text">CPU Traffic</span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text">CPU Trafik</span>
                                     <span class="info-box-number">
                                         10
                                         <small>%</small>
                                     </span>
-                                </div>*@
-                                <!-- /.info-box-content -->
+                                </div>
+                                
                             </div>
-                            <!-- /.info-box -->
+                           
                         </div>
                         <!-- /.col -->
                         <div class="col-12 col-sm-6 col-md-3">
@@ -81,7 +72,7 @@
                         </div>
                         <!-- /.col -->
                     </div>
-                    <!-- /.row -->
+             
 
                     <div class="row">
                         <div class="col-md-12">
@@ -114,8 +105,14 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-8">
+                                            @{
+
+                                                DateTime currentDate = DateTime.Now;
+                                                DateTime oneMonthAgo = currentDate.AddMonths(-1);
+                                                string dateRange = $"{oneMonthAgo.ToString("dd MMM, yyyy")} - {currentDate.ToString("dd MMM, yyyy")}";
+                                            }
                                             <p class="text-center">
-                                                <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
+                                                <strong>Tarih: @dateRange</strong>
                                             </p>
 
                                             <div class="chart">
@@ -125,7 +122,7 @@
                                             <!-- /.chart-responsive -->
                                         </div>
                                         <!-- /.col -->
-                                        <div class="col-md-4">
+                                        <!--<div class="col-md-4">
                                             <p class="text-center">
                                                 <strong>Goal Completion</strong>
                                             </p>
@@ -136,36 +133,36 @@
                                                 <div class="progress progress-sm">
                                                     <div class="progress-bar bg-primary" style="width: 80%"></div>
                                                 </div>
-                                            </div>
+                                            </div>-->
                                             <!-- /.progress-group -->
 
-                                            <div class="progress-group">
+                                            <!--<div class="progress-group">
                                                 Complete Purchase
                                                 <span class="float-right"><b>310</b>/400</span>
                                                 <div class="progress progress-sm">
                                                     <div class="progress-bar bg-danger" style="width: 75%"></div>
                                                 </div>
-                                            </div>
+                                            </div>-->
 
                                             <!-- /.progress-group -->
-                                            <div class="progress-group">
+                                            <!--<div class="progress-group">
                                                 <span class="progress-text">Visit Premium Page</span>
                                                 <span class="float-right"><b>480</b>/800</span>
                                                 <div class="progress progress-sm">
                                                     <div class="progress-bar bg-success" style="width: 60%"></div>
                                                 </div>
-                                            </div>
+                                            </div>-->
 
                                             <!-- /.progress-group -->
-                                            <div class="progress-group">
+                                            <!--<div class="progress-group">
                                                 Send Inquiries
                                                 <span class="float-right"><b>250</b>/500</span>
                                                 <div class="progress progress-sm">
                                                     <div class="progress-bar bg-warning" style="width: 50%"></div>
                                                 </div>
-                                            </div>
+                                            </div>-->
                                             <!-- /.progress-group -->
-                                        </div>
+                                        <!--</div>-->
                                         <!-- /.col -->
                                     </div>
                                     <!-- /.row -->
@@ -177,7 +174,7 @@
                                             <div class="description-block border-right">
                                                 <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span>
                                                 <h5 class="description-header">$35,210.43</h5>
-                                                <span class="description-text">TOTAL REVENUE</span>
+                                                <span class="description-text">Toplam Gelir</span>
                                             </div>
                                             <!-- /.description-block -->
                                         </div>
@@ -186,7 +183,7 @@
                                             <div class="description-block border-right">
                                                 <span class="description-percentage text-warning"><i class="fas fa-caret-left"></i> 0%</span>
                                                 <h5 class="description-header">$10,390.90</h5>
-                                                <span class="description-text">TOTAL COST</span>
+                                                <span class="description-text">Toplam Tutar</span>
                                             </div>
                                             <!-- /.description-block -->
                                         </div>
@@ -195,7 +192,7 @@
                                             <div class="description-block border-right">
                                                 <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 20%</span>
                                                 <h5 class="description-header">$24,813.53</h5>
-                                                <span class="description-text">TOTAL PROFIT</span>
+                                                <span class="description-text">Toplam Kâr</span>
                                             </div>
                                             <!-- /.description-block -->
                                         </div>
@@ -204,7 +201,7 @@
                                             <div class="description-block">
                                                 <span class="description-percentage text-danger"><i class="fas fa-caret-down"></i> 18%</span>
                                                 <h5 class="description-header">1200</h5>
-                                                <span class="description-text">GOAL COMPLETIONS</span>
+                                                <span class="description-text">Hedef Tamamlamaları</span>
                                             </div>
                                             <!-- /.description-block -->
                                         </div>
@@ -316,7 +313,7 @@
                         <div class="col-md-4">
                                           
 
-                            <div class="card">
+                            <!--<div class="card">
                                 <div class="card-header">
                                     <h3 class="card-title">Browser Usage</h3>
 
@@ -328,31 +325,31 @@
                                             <i class="fas fa-times"></i>
                                         </button>
                                     </div>
-                                </div>
+                                </div>-->
                                 <!-- /.card-header -->
-                                <div class="card-body">
+                                <!--<div class="card-body">
                                     <div class="row">
                                         <div class="col-md-8">
                                             <div class="chart-responsive">
                                                 <canvas id="pieChart" height="150"></canvas>
-                                            </div>
+                                            </div>-->
                                             <!-- ./chart-responsive -->
-                                        </div>
+                                        <!--</div>-->
                                         <!-- /.col -->
-                                        <div class="col-md-4">
+                                        <!--<div class="col-md-4">
                                             <ul class="chart-legend clearfix">
                                                 <li><i class="far fa-circle text-danger"></i> Chrome</li>
                                                 <li><i class="far fa-circle text-warning"></i> FireFox</li>
                                                 <li><i class="far fa-circle text-info"></i> Safari</li>
                                                 <li><i class="far fa-circle text-primary"></i> Opera</li>                                              
                                             </ul>
-                                        </div>
+                                        </div>-->
                                         <!-- /.col -->
-                                    </div>
+                                    <!--</div>-->
                                     <!-- /.row -->
-                                </div>
+                                <!--</div>-->
                                 <!-- /.card-body -->
-                                <div class="card-footer bg-white p-0">
+                                <!--<div class="card-footer bg-white p-0">
                                     <ul class="nav nav-pills flex-column">
                                         <li class="nav-item">
                                             <a href="#" class="nav-link">
@@ -373,14 +370,14 @@
                                         </li>
                                        
                                     </ul>
-                                </div>
+                                </div>-->
                                 <!-- /.footer -->
-                            </div>
+                            <!--</div>-->
                             <!-- /.card -->
                             <!-- PRODUCT LIST -->
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title"></h3>
+                                    <h3 class="card-title">Son Eklenen Ürünler</h3>
 
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -413,7 +410,7 @@
                                 </div>
                                 <!-- /.card-body -->
                                 <div class="card-footer text-center">
-                                    <a href="javascript:void(0)" class="uppercase">View All Products</a>
+                                    <a href="javascript:void(0)" class="uppercase">Tümünü Görüntüle</a>
                                 </div>
                                 <!-- /.card-footer -->
                             </div>
@@ -422,8 +419,8 @@
                         <!-- /.col -->
                     </div>
                     <!-- /.row -->
-                </div><!--/. container-fluid -->
-            </section>
+                
+            
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
@@ -433,7 +430,7 @@
         </aside>
         <!-- /.control-sidebar -->
        
-    </div>
+    
     <!-- ./wrapper -->
     <!-- REQUIRED SCRIPTS -->
     <!-- jQuery -->

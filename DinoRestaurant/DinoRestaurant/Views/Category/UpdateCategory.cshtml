@@ -1,0 +1,37 @@
+﻿@model DinoRestaurant.Models.Entity.Categories
+@{
+    ViewBag.Title = "UpdateCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>Kategori Güncelleme Sayfası</h2>
+
+@using (Html.BeginForm("UpdateCategory", "Category", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        @Html.Label("Kategori Adı")
+        @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+        <br /> <br />
+
+        @Html.Label("Kategori Görseli")
+        <input type="file" class="form-control" name="Image" />
+        <br /><br />
+
+        @Html.Label("Kategori Açıklaması")
+        @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+        <br /> <br />
+
+        @Html.LabelFor(model => model.IsActive, new { @class = "control-label" })<br />
+        <div class="form-check-inline">
+            <input type="checkbox" class="form-check-input" name="IsActive" id="isActiveCheckbox" value="true" @(Model.IsActive ? "checked" : "") />
+            <label class="form-check-label" for="isActiveCheckbox">Aktif</label>
+        </div>
+        <div class="form-check-inline">
+            <input type="checkbox" class="form-check-input" name="IsActive" value="false" @(Model.IsActive ? "" : "checked") />
+            <label class="form-check-label">Pasif</label>
+        </div>
+        <br /><br />
+        <button class="btn btn-success" type="submit" value="@Model.CategoryId" name="CategoryId">
+            Güncelle
+        </button>
+    </div>
+}

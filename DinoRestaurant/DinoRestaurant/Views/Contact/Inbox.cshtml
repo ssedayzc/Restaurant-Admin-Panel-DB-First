@@ -80,8 +80,8 @@
                     <!-- /.card-body -->
                     <div class="card-footer p-0">
                         <div class="mailbox-controls">
-                            <button href="/Contact/DeleteMsg/" type="button" class="btn btn-danger btn-sm" id="deleteSelected">
-                                <i class="far fa-trash-alt"></i> Seçilenleri Sil
+                            <button href="/Contact/MoveToTrash/" type="button" class="btn btn-danger btn-sm" id="moveToTrash">
+                                <i class="far fa-trash-alt"></i> Seçilenleri Çöp Kutusuna Taşı
                             </button>
                         </div>
                     </div>
@@ -96,14 +96,14 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
-            $("#deleteSelected").click(function () {
+            $("#moveToTrash").click(function () {
                 var selectedIds = [];
                 $("input[type=checkbox]:checked").each(function () {
                     selectedIds.push($(this).val());
                 });
 
                 if (selectedIds.length > 0) {
-                    $.post("/Contact/DeleteMsg", { ids: selectedIds }, function () {
+                    $.post("/Contact/MoveToTrash", { ids: selectedIds }, function () {
                         location.reload();
                     });
                 }
