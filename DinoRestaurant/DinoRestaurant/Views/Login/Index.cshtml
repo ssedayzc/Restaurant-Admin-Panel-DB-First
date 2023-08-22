@@ -1,0 +1,116 @@
+﻿
+@{
+    Layout = null;
+}
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: flex-start; /* Sayfayı sağa yasla */
+        height: 70vh;
+        overflow: hidden; /* Çıkma olabilecek içeriği gizle */
+
+        background-image: url('../../Images/loginpage.png'); /* Arka plan görselinin URL'si */
+        background-size: cover;
+        background-position: center;
+    }
+
+    .login-container {
+        background-color: rgba(0, 0, 0, 0.6); /* Transparan arka plan rengi */
+        width: 40%; /* Formun genişliği */
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Sayfayı yatayda ortala */
+    }
+
+    .login-form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+
+        .login-form h2 {
+            margin-bottom: 20px;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-form button {
+            background-color: #d50b0b;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Admin Girişi</title>
+
+</head>
+<body>
+    <div class="login-container">
+        @using (Html.BeginForm("Index","Login", FormMethod.Post)) { 
+        <div class="login-form">
+            <div class="logo">
+                <img src="~/Images/dinosoft_logo.png" alt="Dinosoft Logo" class="brand-image" style="width: 200px; margin-top: 35px; filter: drop-shadow(0 0 0 transparent); opacity: 1;" />
+            </div>
+            <h2>Admin Girişi</h2>
+            <form id="login-form">
+                <input type="text" placeholder="Kullanıcı adı" id="username" name="AdminUserName" required>
+                <input type="password" placeholder="Şifre" id="password" name="AdminPassword" required>
+                <button type="submit">Giriş Yap</button>
+            </form>
+            
+        </div>}
+    </div>
+
+
+<script src="~/AdminLTE-3.0.4/login-form-19/js/jquery.min.js"></script>
+<script src="~/AdminLTE-3.0.4/login-form-19/js/popper.js"></script>
+<script src="~/AdminLTE-3.0.4/login-form-19/js/bootstrap.min.js"></script>
+<script src="~/AdminLTE-3.0.4/login-form-19/js/main.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
